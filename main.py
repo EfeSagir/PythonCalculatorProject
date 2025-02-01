@@ -74,38 +74,3 @@ while True:
                 continue
             print(stack[-1])
             turn_start = False
-
-        # zincirleme islem okey, normal islemler okey. ama yeni islem baslatma durumu yanlis yeni islemden sonra = okey
-# bir sikinti daha var 5 5 5 e ayri basarsa onu duzeltelim her input istediiginde operator istemedigi yerlerde
-
-
-# 4
-# +
-# 3
-# =
-# 7.0
-# /
-# 3
-#
-# Process finished with exit code 0
-
-
-# 4
-# +
-# 3
-# =
-# 7.0
-# 3
-# +
-# 4
-# =
-
-
-# 5
-# =
-# 5.0
-# 3
-# +
-# 2
-# =
-# 7.0
