@@ -1,4 +1,3 @@
-import utilities
 from tkinter import *
 
 root = Tk() #Tk() creates main window
@@ -78,7 +77,12 @@ def button_equal():
     elif (multiplication_number_count == 1):
         e.insert(0, float(f_num) * float(second_number))
     elif (division_number_count == 1):
-        e.insert(0, float(f_num) / float(second_number))
+        if (second_number == "0"):
+            e.delete(0,END)
+            e.insert(0, "DENOMINATOR CANT BE 0")
+        else:
+            e.insert(0, float(f_num) / float(second_number))
+
 
 button_0 = Button(root, text = "0", padx = 40, pady = 20, command = lambda: button_click(0))
 button_1 = Button(root, text = "1", padx = 40, pady = 20, command = lambda: button_click(1))
@@ -90,6 +94,7 @@ button_6 = Button(root, text = "6", padx = 40, pady = 20, command = lambda: butt
 button_7 = Button(root, text = "7", padx = 40, pady = 20, command = lambda: button_click(7))
 button_8 = Button(root, text = "8", padx = 40, pady = 20, command = lambda: button_click(8))
 button_9 = Button(root, text = "9", padx = 40, pady = 20, command = lambda: button_click(9))
+button_comma = Button(root, text =".", padx= 43, pady= 20, command = lambda: button_click("."))
 
 button_plus = Button(root, text = "+", padx = 40, pady = 20, command = button_addition)
 button_minus = Button(root, text = "-", padx = 40, pady = 20, command = button_substraction)
@@ -113,7 +118,17 @@ button_plus.grid(row=2, column=3)
 button_minus.grid(row=3, column=3)
 button_star.grid(row=4, column=3)
 button_slash.grid(row=5, column=3)
-button_equation.grid(row=5, column=2)
-button_clear.grid(row=5, column= 0)
+button_equation.grid(row=6, column=3)
+button_clear.grid(row=0, column= 3)
+button_comma.grid(row =5, column = 2)
+
 
 root.mainloop()
+
+#TODO: chain calculation
+#TODO: first number cant be negative
+#TODO: there is no comma
+#TODO: cant erase specifically index[-1]
+#TODO: it shows as float
+#TODO: after clearing it uses still the latest number
+#TODO: try-except
